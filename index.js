@@ -1,3 +1,6 @@
 const op = require('./services');
 
-console.log(op.getCharacters());
+const option = process.argv[2];
+const id = process.argv[3];
+
+if(option === 'episode')

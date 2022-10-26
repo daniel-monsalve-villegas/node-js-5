@@ -1,43 +1,45 @@
+'use strict'
 const axios = require('axios');
 
-function getCharacters() {
-axios.get('https://rickandmortyapi.com/api/character')
-	.then((res) => {
-		console.log(res.data.results);
-	})
-	.catch((err) => {
+async function getCharacters() {
+	try {
+		const res = await axios.get('https://rickandmortyapi.com/api/character');
+		console.log(res.data.results)
+	} catch (err) {
 		console.error(err);
-	})
+	}
 }
 
-function getEpisodes() {
-	axios.get('https://rickandmortyapi.com/api/episode')
-		.then((res) => {
-			console.log(res.data.results);
-		})
-		.catch((err) => {
-			console.error(err)
-		})
+async function getEpisodes() {
+	try {
+		const res = await	axios.get('https://rickandmortyapi.com/api/episode');
+		console.log(res.data.results);
+	} catch (err) {
+		console.error(err);
+	}
 }
 
-function getCharacterEpisodes(val) {
-	axios.get(`https://rickandmortyapi.com/api/character/${val}`)
-		.then((res) => {
-			console.log(res.data);
-		})
-		.catch((err) => {
-			console.error(err)
-		})
+async function getCharacterEpisodes(val) {
+	try {
+		const res = await axios.get(`https://rickandmortyapi.com/api/character/${val}`)
+		console.log(res.data);
+	} catch (err) {
+		console.error(err);
+	}
 }
 
-function getEpisodeCharacters(val) {
-	axios.get(`https://rickandmortyapi.com/api/episode/${val}`)
-		.then((res) => {
-			console.log(res.data);
-		})
-		.catch((err) => {
-			console.error(err)
-		})
+async function getEpisodeCharacters(val) {
+	try {
+		const res = await axios.get(`https://rickandmortyapi.com/api/episode/${val}`)
+		console.log(res.data);
+	} catch (err) {
+		console.error(err);
+	}
 }
 
-getCharacterEpisodes(28)
+module.exports = { getCharacters, getEpisodes, getCharacterEpisodes, getEpisodeCharacters }
+
+//getCharacters();
+//getEpisodes();
+//getCharacterEpisodes(3);
+//getEpisodeCharacters(4);
