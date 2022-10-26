@@ -39,7 +39,7 @@ async function getEpisodeCharacters(val) {
 
 module.exports = { getCharacters, getEpisodes, getCharacterEpisodes, getEpisodeCharacters }
 
-//getCharacters();
+getCharacters();
 //getEpisodes();
 //getCharacterEpisodes(3);
 //getEpisodeCharacters(4);
