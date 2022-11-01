@@ -22,7 +22,7 @@ async function getEpisodes() {
 async function getCharacterEpisodes(val) {
 	try {
 		const res = await axios.get(`https://rickandmortyapi.com/api/character/${val}`)
-		console.log(res.data);
+		console.log(res.data.name);
 	} catch (err) {
 		console.error(err);
 	}
